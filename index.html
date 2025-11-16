@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Smoothie Machine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <h1>The Smoothie Machine</h1>
+      <p>Choose your ingredients and build your custom smoothie.</p>
+    </header>
+
+    <!-- Order Form -->
+    <section class="card">
+      <h2 class="card-title">Order Form</h2>
+
+      <form id="smoothie-form">
+
+        <!-- Size -->
+        <fieldset class="field-group">
+          <legend class="field-label">Size</legend>
+          <label><input type="radio" name="size" value="Small" checked /> Small</label>
+          <label><input type="radio" name="size" value="Medium" /> Medium</label>
+          <label><input type="radio" name="size" value="Large" /> Large</label>
+        </fieldset>
+
+        <!-- Base -->
+        <label class="field-group">
+          <span class="field-label">Base</span>
+          <select name="base">
+            <option value="Water">Water</option>
+            <option value="Apple juice">Apple juice</option>
+            <option value="Tomato juice">Tomato juice</option>
+          </select>
+        </label>
+
+        <!-- Ingredients -->
+        <fieldset class="field-group">
+          <legend class="field-label">Main Ingredients</legend>
+          <span class="field-hint">Choose one or more</span>
+
+          <div class="field-options">
+            <label><input type="checkbox" name="ingredients" value="Apple" /> Apple</label>
+            <label><input type="checkbox" name="ingredients" value="Cucumber" /> Cucumber</label>
+            <label><input type="checkbox" name="ingredients" value="Celery" /> Celery</label>
+            <label><input type="checkbox" name="ingredients" value="Tomato" /> Tomato</label>
+            <label><input type="checkbox" name="ingredients" value="Bell pepper" /> Bell pepper</label>
+          </div>
+        </fieldset>
+
+        <!-- Add-ons -->
+        <fieldset class="field-group">
+          <legend class="field-label">Add-ons</legend>
+          <span class="field-hint">Optional</span>
+          <div class="field-options">
+            <label><input type="checkbox" name="addons" value="Ginger" /> Ginger</label>
+            <label><input type="checkbox" name="addons" value="Lemon" /> Lemon</label>
+            <label><input type="checkbox" name="addons" value="Cilantro" /> Cilantro</label>
+            <label><input type="checkbox" name="addons" value="Garlic" /> Garlic</label>
+          </div>
+        </fieldset>
+
+        <!-- Sweetness -->
+        <label class="field-group">
+          <span class="field-label">Sweetness</span>
+          <select name="sweetness">
+            <option value="0">0 — no sweetness</option>
+            <option value="1">1 — light sweetness</option>
+            <option value="2">2 — medium sweetness</option>
+            <option value="3">3 — sweet</option>
+          </select>
+        </label>
+
+        <!-- Buttons -->
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Order Smoothie</button>
+          <button type="reset" id="btn-reset" class="btn-ghost">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Output -->
+    <section class="card card-output">
+      <h2 class="card-title">Your Smoothie</h2>
+
+      <div class="output-layout">
+        <div class="output-image">
+          <img id="smoothie-image" src="" alt="" hidden />
+        </div>
+
+        <div class="output-text">
+          <p id="order-summary" class="output-main">
+            Fill the form and press “Order Smoothie” to see the result.
+          </p>
+
+          <p id="order-price" class="output-price"></p>
+
+          <h3>Description</h3>
+          <p id="smoothie-description"></p>
+
+          <h3>Characteristics</h3>
+          <dl id="smoothie-specs"></dl>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <small>COMP1073 • Smoothie Machine • Vanilla JavaScript</small>
+    </footer>
+  </main>
+
+  <script src="smoothie.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
